@@ -1,0 +1,5 @@
+package com.hari.repository;
+
+public interface TicketBookingRepository {
+
+}

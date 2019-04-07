@@ -1,0 +1,31 @@
+package com.hari.app;
+
+import java.util.Date;
+
+
+import org.springframework.boot.SpringApplication;
+
+
+import com.hari.entities.Ticket;
+import com.hari.services.TicketBookingServices;
+
+@SpringBootApplication
+public class TicketBookingManagementAppApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext applicationContext = SpringApplication.run(TicketBookingManagementAppApplication.class, args);
+	
+		TicketBookingServices ticketBookingServices = applicationContext.getBean("ticketBookingServices", TicketBookingServices.class);
+	
+		Ticket ticket = new Ticket();
+		ticket.setBookingDate(new Date());
+		ticket.setDestStation("Colombo");
+		ticket.setSourceStation("Jaffna");
+		ticket.setPassengerName("Hari");
+		ticket.setEmail("hari-235@outlook.com");
+		
+		ticketBookingServices.createTicket(ticket);
+		
+	}
+
+}

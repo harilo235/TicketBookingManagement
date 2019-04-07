@@ -1,0 +1,5 @@
+package com.hari.entities;
+
+public class Ticket {
+
+}

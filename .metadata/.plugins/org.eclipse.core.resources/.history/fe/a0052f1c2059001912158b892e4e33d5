@@ -1,0 +1,31 @@
+package com.hari.entities;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ticket")
+public class Ticket {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer ticketId;
+	
+	private String passengerName;
+	
+	private Date bookingDate;
+	
+	private String sourceStation;
+	
+	private String destStation;
+	
+	private String email;
+
+
+	
+}
